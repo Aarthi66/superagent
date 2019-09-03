@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link type="text/css" href="css/index.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.from,Promise,Symbol,Object.setPrototypeOf,Object.getOwnPropertySymbols"></script>
+    <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+    <script type="text/javascript" src="js/server3.js">
+      //     function request() {
+      //       superagent
+      //         .post("/sample")
+      //         .send({ postdata: true, post: "hello" })
+      //         .end(function(err, result) {
+      //           console.log("postResponse", result.body);
+      //           //         document.getElementById(
+      //           //           "text1"
+      //           //         ).innerHTML = `<form id="change" method="post" action="/addname">
+      //           //   <label>Enter Your Name</label><br />
+      //           //   <input
+      //           //     type="text"
+      //           //     name="lastName"
+      //           //     placeholder="Enter last name..."
+      //           //     required
+      //           //   />
+      //           //   <input type="submit" value="Add Name" onclick="formdata()" />
+      //           // </form>`;
+      //           //       });
+
+      //           document.getElementById("content").innerHTML = `<input
+      //     type="text"
+      //    name="lastName"
+      //    placeholder="Enter last name..."
+      // required
+      //     />`;
+
+      //           //   document.getElementById("text1").insertAdjacentHTML("beforeend","<div><button placeholdr ="hsiiii">Click Here</button> </div>")
+      //           // superagent
+      //           //   .get("/sample")
+      //           //   .send({ getdata: true, post: "hey" })
+      //           //   .end(function(err, result) {
+      //           //     console.log("gettResponse", result.body);
+      //           //   });
+      //           // superagent
+      //           //   .put("/sample")
+      //           //   .send({ putdata: true, post: "hiall" })
+      //           //   .end(function(err, result) {
+      //           //     console.log("putResponse", result.body);
+      //           //   });
+      //         });
+      //     }
+      //     function generateCode() {
+      //       return Math.random()
+      //         .toString(36)
+      //         .slice(-8);
+      //     }
+      //     function sendMail(code, mail) {}
+      //     function formdata() {
+      //       // var result = check();
+      //       // if (result) {
+
+      //       var Verificationcode = generateCode();
+      //       sendMail(Verificationcode, document.getElementById("email").value);
+      //       superagent
+      //         .post("/signup")
+      //         .send({
+      //           username: document.getElementById("username").value,
+      //           emailid: document.getElementById("email").value,
+      //           password: document.getElementById("password").value,
+      //           code: Verificationcode
+      //         })
+      //         .end(function(err, result) {
+      //           if (err) {
+      //             console.log(err);
+      //           }
+      //           else{console.log("form data", result.body);}
+
+      //         })
+      //         // .then(res => {
+      //         //  console.log(JSON.stringify(res.body))
+      //         // })
+      //     }
+      //     function check() {
+      //       if (
+      //         document.getElementById("password").value ==
+      //         document.getElementById("confirmpass").value
+      //       ) {
+      //         document.getElementById("message").style.color = "green";
+      //         document.getElementById("message").innerHTML = "matching";
+      //         document.getElementById("Submit").disabled = false;
+      //       } else {
+      //         document.getElementById("message").style.color = "red";
+      //         document.getElementById("message").innerHTML = "not matching";
+      //         document.getElementById("Submit").disabled = true;
+      //       }
+      //     }
+
+      //     function logindata() {
+      //       superagent
+      //         .post("/login")
+      //         .send({
+      //           username: document.getElementById("loginusername").value,
+      //           password: document.getElementById("loginpassword").value
+      //         })
+      //         .end(function(err, result) {
+      //           if (err) {
+      //             console.log(err);
+      //           } else {
+      //             console.log("result1", result);
+      //           }
+      //         });
+      //     }
+    </script>
+  </head>
+  <body>
+    <!-- <p id="id"></p>
+    <input id="text1" type="text" value="TextBox" />
+    <button onclick="request()">request</button> -->
+    <!-- <form id="login" method="post" action="/login"> -->
+    <label>LOGIN</label><br />
+    <input
+      type="text"
+      id="loginusername"
+      name="username"
+      placeholder="Enter your username"
+      required
+    /><br />
+    <input
+      type="text"
+      id="loginpassword"
+      name="password"
+      placeholder="Enter ur password"
+      required
+    />
+    <input type="submit" value="Submit" onclick="logindata()" />
+    <input type="submit" value="Cancel" />
+    <!-- </form> -->
+    <br />
+
+    <!-- <form id="signup" method="post" action="/signup"> -->
+    <label>SIGNUP</label><br />
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="Enter username..."
+      required
+    /><br />
+    <input
+      type="text"
+      id="email"
+      name="email"
+      placeholder="Enter mail id..."
+      required
+    /><br />
+    <input
+      type="text"
+      id="password"
+      name="password"
+      placeholder="Enter password..."
+      onkeyup="check()"
+      required
+    /><br />
+    <input
+      type="text"
+      id="confirmpass"
+      name="confirmpass"
+      placeholder="ReEnter the password..."
+      onkeyup="check()"
+      required
+    />
+    <span id="message"></span>
+    <input id="signsubmit" type="submit" value="Submit" onclick="formdata()" />
+    <input type="submit" value="Cancel" />
+    <!-- </form> -->
+  </body>
+</html>
